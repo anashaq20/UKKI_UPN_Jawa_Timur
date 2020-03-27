@@ -18,14 +18,17 @@ if(isset($_POST['simpan'])){
     $sql = "INSERT INTO anggota_ukki VALUES ('$id_anggota', '$npm', '$nama', '$jk', '$jurusan', '$angkatan', '$status', '$tanggal', '$alamat')";
     $query = mysqli_query($conn, $sql);
     // apakah query simpan berhasil?
-    if( $query ) {
+   if( $query ) {
         // kalau berhasil alihkan ke halaman index.php dengan status=sukses
         echo "<script>window.alert('Selamat, Anda telah berhasil mendaftar!!');</script>";
+        echo "<meta http-equiv='refresh' content='0; url=daftar.php'>";
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
+        // header('Location: index.html');
         echo "<script>window.alert('Maaf, Anda gagal mendaftar!!');</script>";
-    };
-}else {
+        echo "<meta http-equiv='refresh' content='0; url=daftar.php'>";
+    }; 
+}    else {
     die("Akses tidak dapat diberkan");
     }
 ?>
