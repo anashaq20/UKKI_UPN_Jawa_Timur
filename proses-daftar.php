@@ -24,9 +24,8 @@ if(isset($_POST['simpan'])){
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
         echo "<script>window.alert('Maaf, Anda gagal mendaftar!!');</script>";
-        
-    } 
-    else {
+    };
+}else {
     die("Akses tidak dapat diberkan");
     }
 ?>
